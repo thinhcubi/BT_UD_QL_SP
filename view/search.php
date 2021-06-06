@@ -8,8 +8,8 @@
                 <nav class="navbar navbar-light bg-light">
                     <div class="container-fluid">
                         <form class="d-flex" method="post">
-                            <input class="form-control me-2"  name="search" placeholder="Search" aria-label="Search">
-                            <a href="./index.php?page=search" <button class="btn btn-outline-success" type="submit" >Search</button></a>
+                            <input class="form-control me-2" name="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                     </div>
                 </nav>
@@ -26,20 +26,20 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($products as $key    => $product): ?>
+                    <?php foreach ($pro as $key    => $product): ?>
                     <tr>
                         <td><?php echo ++$key ?></td>
                         <td><?php echo $product->name ?></td>
                         <td><?php echo $product->price ?></td>
                         <td><?php echo $product->description ?></td>
                         <td><?php echo $product->producer ?></td>
-                       <td><a href="./index.php?page=delete&id=<?php echo $product->id; ?>"
-                              class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
-                       <a href="./index.php?page=edit&id=<?php echo $product->id ; ?>"
-                          class="btm btn-danger btn-sm" >Edit</a>
-                           <a href="./index.php>page=description&id=<?php echo $product->id; ?>"
-                              class="lbk btn-danger btn-sm" >Chi tiet</a>
-                       </td>
+                        <td><a href="./index.php?page=delete&id=<?php echo $product->id; ?>"
+                               class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                            <a href="./index.php?page=edit&id=<?php echo $product->id ; ?>"
+                               class="btn btn-danger btn-sm" >Edit</a>
+                            <a href="./index.php>page=description&id=<?php echo $product->id; ?>"
+                               class="btn btn-danger btn-sm" >Chi tiet</a>
+                        </td>
 
                         <?php endforeach; ?>
                     </tbody>
@@ -48,5 +48,3 @@
         </div>
     </div>
 </div>
-
-
