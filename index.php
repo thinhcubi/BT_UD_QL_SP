@@ -6,6 +6,7 @@ require "model/Product.php";
 require "controller/ProductController.php";
 
 use \Controller\ProductController;
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -25,25 +26,36 @@ use \Controller\ProductController;
             <a class="navbar-brand" href="index.php">Trang chủ</a>
         </div>
     </nav>
-<?php
-$controller = new ProductController();
-$page = $_REQUEST['page'] ?? null;
-switch ($page){
-    case 'add':
-        $controller->add();
-        break;
-    case 'delete':
-        $controller->delete();
-        break;
-    case 'edit':
-        $controller->edit();
-        break;
-    default:
-        $controller->index();
-        break;
-}
+    <?php
+    $controller = new ProductController();
+    $page = $_REQUEST['page'] ?? null;
+//if(isset($_REQUEST['search'])){
+//    $controller->search();
+//}
+    switch ($page) {
+        case 'add':
+            $controller->add();
+            break;
+        case 'delete':
+            $controller->delete();
+            break;
+        case 'edit':
+            $controller->edit();
+            break;
+        case 'description':
+            $controller->description();
+            break;
+        case 'search':
+            $controller->search();
+            break;
+        default:
+            $controller->index();
+            break;
+    }
 
-?>
+
+
+    ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
